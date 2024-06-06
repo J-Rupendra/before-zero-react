@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sunyath Veerah React</title>
+</head>
+<body>
+    <div id="root" ></div>
+    <script>
+        // const paragraph = document.createElement("p")
+        // paragraph.innerHTML = "Hello World"
+        // document.getElementById("root").appendChild(paragraph)
+        
+    </script>
+    <!-- crossorigin attribute in the below line will set the mode of request to  http CORS request, which will help in avoiding errors to import file from other server -->
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script> -->
+    <!-- <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
+    <!-- <script>
+        const heading = React.createElement("h1",{},"Hello world by react") // we need react core to create an element
+        const root= ReactDOM.createRoot(document.getElementById("root")) // reactdom gives the ability to render any element but it needs a root element to host it
+        root.render(heading)
+    </script> -->
+    <!-- as we are using react inside this js file, to support import statements we use type module. browsers won't support imports for normal js file -->
+    <script type="module" src="./app.js" ></script>
+</body>
+</html>
