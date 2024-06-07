@@ -15,13 +15,26 @@ const heading = React.createElement(
 //JSX will be converted into react element and can be rendered using react dom
 const root = ReactDOM.createRoot(document.getElementById("root")) // as React DOM give the ability to manipulate th DOM
 const jsxElement = <h1>this is from JSX</h1>
+// multilevel and JSX element inside JSX element
 const jsxElementMultiLine = (<h1 className="head">
+    {jsxElement}
     this is from JSX</h1>)
 
 // functional component is a JS function which starts with capital letter and returns single either react element or JSX
 const ElementFunctionalComponent = () => {
-    // component composition
-    return <h1> <ElementFunctionalComponentInner /> This is a functional component</h1>
+    return (
+        <div>
+            {jsxElementMultiLine}
+            {/* component composition */}  
+            {// we can use comments like this also as this syntax will comment everything on right side
+            }
+            <ElementFunctionalComponentInner />
+            <ElementFunctionalComponentInner></ElementFunctionalComponentInner>
+            {ElementFunctionalComponentInner()}
+            {/* all the above 3 syntaxes are same and last one is possible because functional component is js function */ }
+        <h1>This is a functional component</h1>
+        </div>
+)
 }
 
 const ElementFunctionalComponentInner = () => {
