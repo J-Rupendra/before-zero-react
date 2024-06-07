@@ -13,14 +13,22 @@ const heading = React.createElement(
 // React DOM will give us the ability to assign root and rendering
 
 //JSX will be converted into react element and can be rendered using react dom
+const root = ReactDOM.createRoot(document.getElementById("root")) // as React DOM give the ability to manipulate th DOM
 const jsxElement = <h1>this is from JSX</h1>
 const jsxElementMultiLine = (<h1 className="head">
     this is from JSX</h1>)
 
 // functional component is a JS function which starts with capital letter and returns single either react element or JSX
 const ElementFunctionalComponent = () => {
-    return <h1>This is a functional component</h1>
+    // component composition
+    return <h1> <ElementFunctionalComponentInner /> This is a functional component</h1>
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root")) // as React DOM give the ability to manipulate th DOM
+const ElementFunctionalComponentInner = () => {
+    return <h1>This is a functional component Inner</h1>
+}
+
+// babel can understand this syntax as functional component
+root.render(<ElementFunctionalComponent/>)
+
 root.render(heading) // it actually converts the heading object into html tag and attach it to the root element.
